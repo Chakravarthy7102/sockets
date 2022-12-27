@@ -13,7 +13,7 @@ func serverWS(pool *websocket.Pool, w *http.ResponseWriter, r *http.Request) {
 	connection, err := websocket.Upgrade(w, r)
 
 	if err != nil {
-		fmt.Fprintf(w, "%+V\n", err)
+		fmt.Fprintf(w, "%v\n", err)
 	}
 
 	client := &websocket.Client{

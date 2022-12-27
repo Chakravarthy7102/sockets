@@ -40,7 +40,7 @@ func (c *Client) Read() {
 		}
 
 		c.Pool.Brodcast <- message
-		fmt.Printf("message recived: %+V\n", message)
+		fmt.Printf("message recived: %+v\n", message)
 
 	}
 }
