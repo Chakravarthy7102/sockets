@@ -17,9 +17,14 @@ func serverWS(pool *websocket.Pool, w *http.ResponseWriter, r *http.Request) {
 	}
 
 	client := &websocket.Client{
-		Conn: connection,
-		Pool: pool,
+		Connection: connection,
+		Pool:       pool,
 	}
+
+	pool.Register <- client
+
+	client.Read()
+
 }
 
 func setUpRoutes() {
