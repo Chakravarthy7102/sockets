@@ -7,7 +7,7 @@ import (
 	websocket "github.com/Chakravarthy712/sockets/pkg/websockets"
 )
 
-func serverWS(pool *websocket.Pool, w *http.ResponseWriter, r *http.Request) {
+func serverWS(pool *websocket.Pool, w http.ResponseWriter, r *http.Request) {
 	fmt.Println("websocket endpoint reached")
 
 	connection, err := websocket.Upgrade(w, r)
